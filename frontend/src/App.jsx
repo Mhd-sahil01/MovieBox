@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Favourite from './pages/Favourite'
 import Navbar from './components/Navbar'
+import './css/App.css';
 
 function App() {
   const [count, setCount] = useState(0)

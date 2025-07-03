@@ -1,7 +1,7 @@
 function Favourite () {
     return (
         <>
-            <h3>No favourite movies</h3>
+            <h2>No favourite movies</h2>
             <p>Add movies to favourite to apper here</p>
         </>
     )
