@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Favourite from './pages/Favourite'
 import Navbar from './components/Navbar'
 import { MovieProvider } from './contexts/MovieContext'
+import Footer from './components/Footer'
 import './css/App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/favourites" element={<Favourite />} />
         </Routes>
       </div>
+      <Footer />
     </MovieProvider>
   )
 }

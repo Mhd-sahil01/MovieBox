@@ -5,12 +5,13 @@ import '../css/Favourite.css'
 function Favourite() {
     const { favourite } = useMovieContext();
 
-    if (!favourite) {
+    if (!favourite || favourite.length === 0) {
         return (
-            <div>
+            <div className="no-favourite">
                 <h2>No favourite movies</h2>
-                <p>Add movies to favourite to apper here</p>
+                <p>Add movies to favourite to appear here</p>
             </div>
+
         )
 
     } else {

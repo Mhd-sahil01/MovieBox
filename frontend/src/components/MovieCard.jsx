@@ -18,7 +18,7 @@ function MovieCard({ movie }) {
                 <img src={movie.Poster} alt={movie.Title} />
                 <div className="movie-overlay">
                     <button className={`fav-btn ${favourite ? "active" : ""} `} onClick={onFavClick}>
-                        🤍
+                    {favourite ? '❤️' : '🤍'}
                     </button>
                 </div>
             </div>
