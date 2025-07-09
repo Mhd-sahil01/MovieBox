@@ -1,15 +1,14 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Favourite from './pages/Favourite'
 import Navbar from './components/Navbar'
+import { MovieProvider } from './contexts/MovieContext'
 import './css/App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <MovieProvider>
       <Navbar />
       <div className="main-content">
         <Routes>
@@ -17,7 +16,7 @@ function App() {
           <Route path="/favourites" element={<Favourite />} />
         </Routes>
       </div>
-    </div>
+    </MovieProvider>
   )
 }
 

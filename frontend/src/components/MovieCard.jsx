@@ -1,9 +1,15 @@
+import { useMovieContext } from '../contexts/MovieContext';
 import '../css/MovieCard.css'
 
-function MovieCard({movie}) {
+function MovieCard({ movie }) {
+    const { isFav, addToFav, removeFromFav } = useMovieContext();
 
-    function onFavClick () {
-        alert("clicked")
+    const favourite = isFav(movie.imdbID);
+
+    function onFavClick(event) {
+        event.preventDefault();
+        if(favourite) removeFromFav(movie.imdbID);
+        else addToFav(movie);
     }
 
     return (
@@ -11,8 +17,8 @@ function MovieCard({movie}) {
             <div className="movie-poster">
                 <img src={movie.Poster} alt={movie.Title} />
                 <div className="movie-overlay">
-                    <button className="fav-btn" onClick={onFavClick}>
-                    🤍
+                    <button className={`fav-btn ${favourite ? "active" : ""} `} onClick={onFavClick}>
+                        🤍
                     </button>
                 </div>
             </div>

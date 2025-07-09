@@ -71,6 +71,7 @@
 
 .fav-btn.active {
   color: #ff4757;
+  background-color: rgba(255, 99, 132, 0.2);
 }
 
 .movie-info {

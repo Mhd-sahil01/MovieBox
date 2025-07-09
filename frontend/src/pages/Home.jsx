@@ -33,9 +33,13 @@ function Home() {
         setLoading(true)
         try {
             const searchMovie = await axios.get(`http://localhost:8000/api/search?query=${encodeURIComponent(searchQuery)}`);
-            console.log(searchMovie);
-            setMovies(searchMovie.data.Search);
-            setError(null);
+            if (!searchMovie.data.Error) {
+                console.log(searchMovie);
+                setMovies(searchMovie.data.Search);
+                setError(null);
+            } else {
+                setError("Failed To Search Movie")
+            }
         } catch (error) {
             console.log(error);
             setError("Failed To Search Movie")
